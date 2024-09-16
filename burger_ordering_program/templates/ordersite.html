@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name=""viewport" 
+    content="width=device-width, initial-scale=1.0">
+    <title>Order your burger here!</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="order-site"> 
+    <h1>Order your burger here!</h1>
+    <form action="/place_order" method="POST">
+        <label for="burger_id">Choose your burger:</label>
+        <select name="burger_id"
+        id="burger_id">
+            {% for burger in burgers %}
+            <option
+            value="{{ burger[0] }}">{{ burger[1] }} - {{ "%.2f"|format(burger[3]) }} kr </option>
+            {% endfor %}
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" value="1" required>
+
+        <fieldset>
+            <legend>Customizations:</legend>
+            <label><input type="checkbox" name="customizations" value="No lettuce"> No lettuce</label><br>
+            <label><input type="checkbox" name="customizations" value="No tomato"> No tomato</label><br>
+            <label><input type="checkbox" name="customizations" value="No onion"> No onion</label><br>
+            <label><input type="checkbox" name="customizations" value="No dressing"> No dressing</label><br>
+            <!-- Lägg till fler val för att ändra burgare -->
+             <label for="custom_customizations">Other customizations:</label><br>
+             <textarea name="custom_customizations" id="custom_customizations" cols="50" rows="4" placeholder="Write your special customizations here!"></textarea>
+        </fieldset>
+
+        <button type="submit">Order now!</button>
+    </form> 
+</body>
+</html>
+            
+        
+    

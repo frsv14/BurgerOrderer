@@ -1,0 +1,352 @@
+/* Gör orderbekräftelsen lite snyggare */
+.order-confirmation {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.order-confirmation h1 {
+    color: #2E8B57; 
+}
+
+.order-confirmation ul {
+    list-style-type: none; 
+    padding: 0;
+}
+
+.order-confirmation li {
+    margin-bottom: 10px; 
+}
+
+.order-confirmation a {
+    text-decoration: none;
+    color: white;
+    background-color: #2E8B57; 
+    padding: 10px 20px;
+    border-radius: 5px; 
+}
+
+.order-confirmation a:hover {
+    background-color: #3CB371; 
+}
+
+/* Gör kitchen view lite snyggare */
+.kitchen-show {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #333333;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    max-width: 1200px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #dddddd;
+    text-align: left;
+}
+
+thead {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e2e2e2;
+}
+
+button.complete-btn {
+    background-color: #ee08db; 
+    color: #ffffff; 
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button.complete-btn:hover {
+    background-color: #218838; 
+}
+
+
+
+/* Gör beställningssidan lite snyggare */
+.order-site {
+    
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+}
+
+/* Container Styling */
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+}
+
+/* Heading Styling */
+h1 {
+    text-align: center;
+    color: #333333;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555555;
+    font-weight: bold;
+}
+
+/* Custom Checkboxes */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid #cccccc;
+    border-radius: 4px;
+    width: 20px;
+    height: 20px;
+    background-color: #ffffff;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+input[type="checkbox"]:checked {
+    background-color: #4CAF50;
+    border-color: #4CAF50;
+}
+
+input[type="checkbox"]:checked::before {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 10px;
+    width: 6px;
+    height: 12px;
+    border: solid #ffffff;
+    border-width: 2px 2px 0 0;
+    transform: rotate(45deg);
+}
+
+input[type="checkbox"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+
+select, input[type="number"] {
+    width: calc(100% - 16px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+
+fieldset {
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+}
+
+
+legend {
+    padding: 0 10px;
+    color: #555555;
+    font-weight: bold;
+}
+
+
+.btn {
+    display: block;
+    width: 100%;
+    padding: 14px 20px; 
+    background-color: #23d129; 
+    color: #ffffff;
+    border: none;
+    border-radius: 8px; 
+    cursor: pointer;
+    font-size: 18px; 
+    font-weight: bold;
+    text-align: center; 
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; 
+}
+
+
+.btn:hover {
+    background-color: #45a049; 
+    transform: scale(1.05); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); 
+}
+
+
+.btn:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+
+}
+
+/* Gör admin-sidan lite snyggare */
+.admin-page {
+    
+body, h1, h2, table, form {
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+h1 {
+    color: #333;
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #3498db;
+}
+
+
+.logout-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e74c3c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.logout-button:hover {
+    background-color: #c0392b;
+}
+
+
+h2 {
+    color: #3498db;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table thead {
+    background-color: #3498db;
+    color: #fff;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+table tr:hover {
+    background-color: #f1f1f1;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form input[type="text"], form input[type="number"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #2980b9;
+}
+
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    table, form {
+        width: 100%;
+    }
+}
+
+}

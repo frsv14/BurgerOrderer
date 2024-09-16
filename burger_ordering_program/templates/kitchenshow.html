@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+content="width=device=width, initial-scale=1.0">
+    <title>Ordered Burgers!</title>
+    <!--Uppdaterar sidan var 10:e sekund-->
+    <script>
+    setInterval(function(){
+        window.location.reload();
+    }, 10000);
+</script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="kitchen-show">
+    <h1>Orders waiting to be made: </h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Burger Name</th>
+                <th>Quantity</th>
+                <th>Status</th>
+                <th>Customizations</th>
+                <th>Complete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for order in orders %}
+            <tr>
+                <td>{{ order[0] }}</td>
+                <td>{{ order[1] }}</td>
+                <td>{{ order[2] }}</td>
+                <td>{{ order[3] }}</td>
+                <td>{{ order[4] }}</td> <!--Visar ändringar på burgaren-->
+                <td>
+                    <form action="/complete_order" method="POST">
+                        <input type="hidden" name="order_id" value="{{ order[0] }}">
+                        <button type="submit"class="complete-btn">Completed</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+            </tbody>
+    </table>
+    <p><a href="/admin">Go to Admin Page</a></p>
+    <p><a href="/logout">Logout</a></p>
+</body>
+</html>
+    
+
+            

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+    <title>Your Order Confirmation</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body class="order-confirmation">
+    <h1>We are grateful for your order!</h1>
+    <p>Here is your order:</p>
+    <ul>
+        <li>Burger: {{ burger_name }}</li>
+        <li>Quantity: {{ quantity }}</li>
+        <li>Total Price: {{ "%.2f" % total_price }} kr</li>
+    </ul>
+    <p>Our staff is preparing your order as fast as possible!</p>
+
+    <a href="/" class="order-button">Order again?</a>
+</body>
+</html>

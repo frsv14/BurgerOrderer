@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/styles.css">
+    <title>Admin Page</title>
+</head>
+<body class="admin_page">
+    <h1>Admin Page</h1>
+    
+    <!-- Logout Link -->
+    <a href="/logout" class="logout-button">Logout</a>
+
+    <h2>Burgers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for burger in burgers %}
+            <tr>
+                <td>{{ burger[0] }}</td>
+                <td>{{ burger[1] }}</td>
+                <td>{{ burger[2] }}</td>
+                <td>
+                    <form action="/edit_burger/{{ burger[0] }}" method="POST" style="display:inline;">
+                        <input type="text" name="name" value="{{ burger[1] }}">
+                        <input type="text" name="price" value="{{ burger[2] }}">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/delete_burger/{{ burger[0] }}" method="POST" style="display:inline;">
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Add New Burger</h2>
+    <form action="/add_burger" method="POST">
+        <input type="text" name="name" placeholder="Name">
+        <input type="text" name="price" placeholder="Price">
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
