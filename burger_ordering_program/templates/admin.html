@@ -18,6 +18,7 @@
             <tr>
                 <th>ID</th>
                 <th>Name</th>
+                <th>Description</th>
                 <th>Price</th>
                 <th>Actions</th>
             </tr>
@@ -27,11 +28,13 @@
             <tr>
                 <td>{{ burger[0] }}</td>
                 <td>{{ burger[1] }}</td>
+                <td>{{ burger[2] }}</td>
                 <td>{{ burger[3] }}</td>
                 <td>
                     <form action="/edit_burger/{{ burger[0] }}" method="POST" style="display:inline;">
-                        <input type="text" name="name" value="{{ burger[1] }}">
-                        <input type="text" name="price" value="{{ burger[3] }}">
+                        <input type="text" name="name" placeholder="nytt namn">
+                        <input type="text" name="description" placeholder="ny beskrivning">
+                        <input type="text" name="price" placeholder="nytt pris">
                         <button type="submit">Edit</button>
                     </form>
                     <form action="/delete_burger/{{ burger[0] }}" method="POST" style="display:inline;">
@@ -46,6 +49,7 @@
     <h2>Add New Burger</h2>
     <form action="/add_burger" method="POST">
         <input type="text" name="name" placeholder="Name">
+        <input type="text" name="description" placeholder="Description">
         <input type="text" name="price" placeholder="Price">
         <button type="submit">Add</button>
     </form>
