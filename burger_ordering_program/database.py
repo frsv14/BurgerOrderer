@@ -51,9 +51,9 @@ CREATE TABLE IF NOT EXISTS users (
 ''')
 
 #  lägger till några burgare
-cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("OSTBURGARE", "", 120)')
-cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("VEGGIEBURGARE", "", 100)')
-cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("BACONBURGARE", "", 130)')
+cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("OSTBURGARE", "", "120")')
+cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("VEGGIEBURGARE", "", "100")')
+cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES ("BACONBURGARE", "", "130")')
 
 # Commit och stäng
 conn.commit()

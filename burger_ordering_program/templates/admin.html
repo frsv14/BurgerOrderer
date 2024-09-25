@@ -27,11 +27,11 @@
             <tr>
                 <td>{{ burger[0] }}</td>
                 <td>{{ burger[1] }}</td>
-                <td>{{ burger[2] }}</td>
+                <td>{{ burger[3] }}</td>
                 <td>
                     <form action="/edit_burger/{{ burger[0] }}" method="POST" style="display:inline;">
                         <input type="text" name="name" value="{{ burger[1] }}">
-                        <input type="text" name="price" value="{{ burger[2] }}">
+                        <input type="text" name="price" value="{{ burger[3] }}">
                         <button type="submit">Edit</button>
                     </form>
                     <form action="/delete_burger/{{ burger[0] }}" method="POST" style="display:inline;">
