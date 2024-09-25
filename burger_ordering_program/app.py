@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect, session, url_for
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import check_password_hash
 import sqlite3    
 from datetime import datetime
 
@@ -72,6 +72,7 @@ def place_order():
 def kitchen():
     if 'user_id' not in session:
         return redirect(url_for('login'))
+    
     conn = connect_db()
     cursor = conn.cursor()
     cursor.execute("""
@@ -120,9 +121,10 @@ def add_burger():
     
     name = request.form.get('name')
     price = float(request.form.get('price'))
+    description = request.form.get('description')
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO burgers (name, price) VALUES (?, ?)', (name, price))
+    cursor.execute('INSERT INTO burgers (name, description, price) VALUES (?, ?, ?)', (name, description, price))
     conn.commit()
     conn.close()
     return redirect('/admin')
@@ -134,9 +136,10 @@ def edit_burger(burger_id):
     
     name = request.form.get('name')
     price = float(request.form.get('price'))
+    description =request.form.get('description')
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('UPDATE burgers SET name = ?, price = ? WHERE id = ?', (name, price, burger_id))
+    cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))
     conn.commit()
     conn.close()
     return redirect('/admin')
