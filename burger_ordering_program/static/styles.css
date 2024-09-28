@@ -237,6 +237,16 @@ legend {
     border-radius: 12px;
   }
 
+  .add-to-cart {
+    background-color: #046daa;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
 
 }
 
