@@ -235,6 +235,7 @@ legend {
     padding: 16px 32px;
     font-size: 16px;
     border-radius: 12px;
+    cursor: pointer;
   }
 
   .add-to-cart {
