@@ -20,13 +20,29 @@ document.addEventListener('DOMContentLoaded', function() {
         cartList.innerHTML = '';
 
         let total = 0;
-        cartItems.forEach(item => {
+        cartItems.forEach((item, index) => {
             const listItem = document.createElement('li');
             listItem.textContent = `${item.burger} x ${item.quantity} = ${item.total.toFixed(2)} kr`;
             cartList.appendChild(listItem);
             total += item.total;
+
+            //Creates a button "Remove from cart" for each element in the array
+            btnRemoveFromCart = document.createElement("button");
+            btnRemoveFromCart.textContent = "Remove from cart";
+
+            //Creates a click event for the buttons btnRemoveFromCart
+            btnRemoveFromCart.addEventListener("click", function(){ removeFromCart(index)});
+
+            //Adds the btnRemoveFromCart button to the list items
+            listItem.appendChild(btnRemoveFromCart);
         });
 
         cartTotal.textContent = `Total: ${total.toFixed(2)} kr`;
+    }
+
+    //Function that removes the cart item for the specified index
+    function removeFromCart(index){
+        cartItems.splice(index, 1);
+        updateCart();
     }
 });
