@@ -120,7 +120,7 @@ def add_burger():
         return redirect(url_for('login'))
     
     name = request.form.get('name')
-    price = float(request.form.get('price'))
+    price = request.form.get('price')
     description = request.form.get('description')
     conn = connect_db()
     cursor = conn.cursor()
@@ -133,13 +133,25 @@ def add_burger():
 def edit_burger(burger_id):
     if 'user_id' not in session:
         return redirect(url_for('login'))
-    
-    name = request.form.get('name')
-    price = float(request.form.get('price'))
-    description =request.form.get('description')
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))
+
+    name = request.form.get('name')
+    price = request.form.get('price')
+    description =request.form.get('description')
+
+    if name != '':
+        cursor.execute('UPDATE burgers SET name = ? WHERE id = ?', (name, burger_id) )
+
+    if description != '' :
+        cursor.execute('UPDATE burgers SET description = ? WHERE id = ?', (description, burger_id))
+         
+    if price != '':
+        cursor.execute('UPDATE burgers SET price = ? WHERE if = ?', (price, burger_id))
+
+    if name != '' and price != '' and description != '':
+        cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))
+
     conn.commit()
     conn.close()
     return redirect('/admin')
