@@ -147,7 +147,7 @@ def edit_burger(burger_id):
         cursor.execute('UPDATE burgers SET description = ? WHERE id = ?', (description, burger_id))
          
     if price != '':
-        cursor.execute('UPDATE burgers SET price = ? WHERE if = ?', (price, burger_id))
+        cursor.execute('UPDATE burgers SET price = ? WHERE id = ?', (price, burger_id))
 
     if name != '' and price != '' and description != '':
         cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))
