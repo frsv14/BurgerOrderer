@@ -1,8 +1,20 @@
 
+import os.path
+
+app_path = 'app.py'
+add_user_path = 'add_user.py'
+database_path = 'database.py'
+
+db_path = '../burgers.db' 
+
+
 try :
     import database
 except ModuleNotFoundError:
-    print('The file database.py does not exist')
+    if os.path.isfile(db_path) == True:
+        print('database has alreadey been deffined')
+    else:
+        print('The file database.py does not exist')
 else :
     print("database was created and can now be used!")
 

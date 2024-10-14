@@ -4,6 +4,10 @@
     margin: 20px;
 }
 
+#error{
+    color :#ff1900
+}
+
 .order-confirmation h1 {
     color: #2E8B57; 
 }
