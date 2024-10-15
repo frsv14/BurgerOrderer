@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask,flash , render_template, request, redirect, session, url_for
 from werkzeug.security import check_password_hash
 import sqlite3    
 from datetime import datetime
@@ -140,14 +140,22 @@ def edit_burger(burger_id):
     price = request.form.get('price')
     description =request.form.get('description')
 
+    try:
+        float(price)
+    except ValueError:
+        flash('Price not a recogniced number!', 'warning')
+    except TypeError:
+        flash('Prise not a number', 'warning')
+    else :    
+        if price != '':
+            cursor.execute('UPDATE burgers SET price = ? WHERE id = ?', (price, burger_id))
+
+
     if name != '':
         cursor.execute('UPDATE burgers SET name = ? WHERE id = ?', (name, burger_id) )
 
     if description != '' :
         cursor.execute('UPDATE burgers SET description = ? WHERE id = ?', (description, burger_id))
-         
-    if price != '':
-        cursor.execute('UPDATE burgers SET price = ? WHERE id = ?', (price, burger_id))
 
     if name != '' and price != '' and description != '':
         cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))

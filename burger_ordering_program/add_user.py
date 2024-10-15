@@ -22,7 +22,7 @@ password = 'password123'  # Replace with a strong password
 hashed_password = generate_password_hash(password)
 
 # Insert the user into the database
-cursor.execute('INSERT INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
+cursor.execute('INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
 conn.commit()
 
 # Close the connection

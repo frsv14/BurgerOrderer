@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/styles.css">
+    <script #python>
+        get_flashed_messages()
+    </script>
     <title>Admin Page</title>
 </head>
 <body class="admin-page">
@@ -53,5 +56,8 @@
         <input type="text" name="price" placeholder="Price">
         <button type="submit">Add</button>
     </form>
+    {% for mesg in get_flashed_messages() %}
+    <h1><div id=error>{{ mesg }}</div></h1>
+    {% endfor %}
 </body>
 </html>
