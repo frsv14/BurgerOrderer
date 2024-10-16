@@ -8,6 +8,7 @@ app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 
 #Ansluter till databasen    
 def connect_db():
+
     conn = sqlite3.connect('burgers.db')
     return conn
 
@@ -16,11 +17,16 @@ def connect_db():
 def order_form():
     conn = connect_db() 
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM burgers')
-    burgers = cursor.fetchall()
-    conn.close()
-    return render_template('ordersite.html', burgers=burgers)
-
+    try:
+        cursor.execute('SELECT * FROM burgers')
+    except sqlite3.OperationalError:
+        exec('database.py')
+        exec('add_burger.py')
+    finally:
+        burgers = cursor.fetchall()
+        conn.close()
+        return render_template('ordersite.html', burgers=burgers)
+    
 #Hantera burger-order
 @app.route('/place_order', methods=['POST'])
 def place_order():
