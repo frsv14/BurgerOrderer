@@ -1,8 +1,10 @@
 // Javascript for cart function
+//Waiting for the DOM to load before executing the code
 document.addEventListener('DOMContentLoaded', function() {
     const cartItems = [];
     const cartTotal = document.getElementById('cart-total');
 
+    //get selected burger and quantity and calculates total price
     document.getElementById('add-to-cart').addEventListener('click', function() {
         const burgerSelect = document.getElementById('burger_id');
         const quantityInput = document.getElementById('quantity');
@@ -14,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cartItems.push({ burger: burger, quantity: quantity, total: total });
         updateCart();
     });
-
+    //Updates the cart display
     function updateCart() {
         const cartList = document.getElementById('cart-items');
         cartList.innerHTML = '';
