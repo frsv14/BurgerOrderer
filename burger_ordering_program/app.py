@@ -25,7 +25,7 @@ def order_form():
     finally:
         burgers = cursor.fetchall()
         conn.close()
-        return render_template('ordersite.html', burgers=burgers)
+        return render_template('BurgerOrder/ordersite.html', burgers=burgers)
     
 #Hantera burger-order
 @app.route('/place_order', methods=['POST'])
