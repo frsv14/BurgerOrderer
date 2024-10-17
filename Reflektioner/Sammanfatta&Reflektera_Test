@@ -1,0 +1,28 @@
+1. Namn på alla i teamet.
+
+2. Länk till projektets sida på git-servern.
+
+3. Kort sammanfattning om vilken funktionalitet ni har testat.
+
+4. Kort sammanfattning om hur ni har genomfört testerna.
+
+5. Utskrift från er senaste testsession, så att man kan se:
+
+• Hur många tester ni har skrivit
+
+• Vad de testar
+
+• Hur många tester som lyckas respektive misslyckas
+
+6. Era erfarenheter om att skriva automatiserade enhetstester.
+
+• Vad gick bra?
+
+• Vad gick mindre bra?
+
+• Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
+
+• Vad lyckades ni inte lösa? Varför inte?
+
+7. Länk till dokumentationen från era respektive debug-sessioner i era indi-
+viduella ingenjörsdagböcker.
