@@ -1,7 +1,6 @@
 from flask import Flask,flash , render_template, request, redirect, session, url_for
 from werkzeug.security import check_password_hash
 import sqlite3    
-from datetime import datetime
 
 app = Flask(__name__)
 app.secret_key = 'your_secret_key'  # Replace with a strong secret key
@@ -57,7 +56,7 @@ def admin():
     cursor.execute('SELECT * FROM burgers')
     burgers = cursor.fetchall()
     conn.close()
-    return render_template('KitchenShow/admin.html', burgers=burgers)
+    return render_template('admin.html', burgers=burgers)
 
 @app.route('/add_burger', methods=['POST'])
 def add_burger():
