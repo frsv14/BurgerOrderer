@@ -25,7 +25,7 @@ def order_form():
     finally:
         burgers = cursor.fetchall()
         conn.close()
-        return render_template('BurgerOrder/ordersite.html', burgers=burgers)
+        return render_template('ordersite.html', burgers=burgers)
     
 #Hantera burger-order
 @app.route('/place_order', methods=['POST'])
@@ -71,7 +71,7 @@ def place_order():
     conn.close()
    
     # Skickar till orderbekräftelse
-    return render_template('orderconfirmation.html', burger_name=burger[0], quantity=quantity, total_price=total_price)
+    return render_template('BurgerOrderer/orderconfirmation.html', burger_name=burger[0], quantity=quantity, total_price=total_price)
 
 #Köksvy: Visar order
 @app.route('/kitchen')
@@ -92,7 +92,7 @@ def kitchen():
     """)
     orders = cursor.fetchall()
     conn.close()
-    return render_template('kitchenshow.html', orders=orders)
+    return render_template('BKitchenShow/kitchenshow.html', orders=orders)
 
 # Markera order som färdig
 @app.route('/complete_order', methods=['POST'])
@@ -118,7 +118,7 @@ def admin():
     cursor.execute('SELECT * FROM burgers')
     burgers = cursor.fetchall()
     conn.close()
-    return render_template('admin.html', burgers=burgers)
+    return render_template('KitchenShow/admin.html', burgers=burgers)
 
 @app.route('/add_burger', methods=['POST'])
 def add_burger():
