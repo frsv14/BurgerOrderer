@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Set the working directory in the container
-WORKDIR /KitchenView/app
+WORKDIR /database
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
@@ -11,17 +11,15 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code into the container
-COPY . .
-
-RUN python add_user.py
+COPY database.py .
 
 
 
 # Set the environment variable for Flask
-ENV FLASK_APP=app.py
+ENV FLASK_APP=database.py
 
 # Expose the port the app runs on
-EXPOSE 8000
+EXPOSE 3306
 
 # Run the application
-ENTRYPOINT [ "python3", "app.py" ]
+CMD ["python3" , "database.py"]

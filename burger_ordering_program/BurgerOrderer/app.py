@@ -16,15 +16,10 @@ def connect_db():
 def order_form():
     conn = connect_db() 
     cursor = conn.cursor()
-    try:
-        cursor.execute('SELECT * FROM burgers')
-    except sqlite3.OperationalError:
-        exec('database.py')
-        exec('add_burger.py')
-    finally:
-        burgers = cursor.fetchall()
-        conn.close()
-        return render_template('ordersite.html', burgers=burgers)
+    cursor.execute('SELECT * FROM burgers')
+    burgers = cursor.fetchall()
+    conn.close()
+    return render_template('ordersite.html', burgers=burgers)
     
 #Hantera burger-order
 @app.route('/place_order', methods=['POST'])
@@ -74,4 +69,4 @@ def place_order():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=8000)

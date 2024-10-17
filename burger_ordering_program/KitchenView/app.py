@@ -7,7 +7,7 @@ app.secret_key = 'your_secret_key'  # Replace with a strong secret key
 
 #Ansluter till databasen    
 def connect_db():
-
+    sqlite3.Connection
     conn = sqlite3.connect('burgers.db')
     return conn
 
@@ -146,4 +146,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)

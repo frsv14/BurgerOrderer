@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Set the working directory in the container
-WORKDIR /BurgerOrderer/app
+WORKDIR /KitchenView/app
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
@@ -15,12 +15,11 @@ COPY . .
 
 RUN python add_user.py
 
-RUN python database.py
 # Set the environment variable for Flask
 ENV FLASK_APP=app.py
 
 # Expose the port the app runs on
-EXPOSE 5000
+EXPOSE 8000
 
 # Run the application
-CMD ["flask", "run", "--host=0.0.0.0"]
+ENTRYPOINT [ "python3", "app.py" ]

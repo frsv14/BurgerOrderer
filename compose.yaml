@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  burgerordering:
+    build: ./burger_ordering_program/BurgerOrderer
+    volumes: 
+      - "./data:/app/data"  # Mount a directory for SQLite database files
+    environment: 
+      KITCHENVIEW_HOST: 'kitchenview:5000'
+    ports:
+      - 8000:8000
+
+  kitchenview:
+    build: ./burger_ordering_program/kitchenview
+    volumes: 
+      - "./data:/app/data"  # Mount the same directory for consistency
+    ports:
+      - 5000:5000
+
+  database configs:
+    build: 

@@ -5,6 +5,7 @@ from werkzeug.security import generate_password_hash
 conn = sqlite3.connect('burgers.db')
 cursor = conn.cursor()
 
+
 # Create users table if it doesn't exist
 cursor.execute('''
 CREATE TABLE IF NOT EXISTS users (
