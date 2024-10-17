@@ -2,7 +2,7 @@
 FROM python:3.9
 
 # Set the working directory in the container
-WORKDIR /app
+WORKDIR /BurgerOrderer/app
 
 # Copy the requirements.txt file into the container
 COPY requirements.txt .
