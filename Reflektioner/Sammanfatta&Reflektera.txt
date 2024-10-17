@@ -1,0 +1,26 @@
+Namn på alla i teamet:
+Albin 
+Freddy 
+Herman 
+Robin 
+
+Länk till projektet på GitHub:
+https://github.com/frsv14/BurgerOrderer
+
+Kort sammanfattning om vad vi implementerat:
+
+Projektet i stort:
+Projektet är ett komplett system för att beställa hamburgare och visa vad som beställts för köket.
+Databasmodul:
+Hanterar lagring av beställningar,modifieringar och användarinformation, gjord i sqlite3.
+
+Backendmodul:
+Hanterar databaskommunikation med frontend.
+API för att skapa,läsa,uppdatera och ta bort beställningar. 
+Hanterar användare och auktorisering.
+
+Frontendmodul:
+Flera olika användargränssnitt där användare kan göra sina beställningar och administratörer kan hantera burgare.
+Gränsnitt för att skapa beställningar,visa bekräftelse,köksvy och administratörsidor.
+
+
