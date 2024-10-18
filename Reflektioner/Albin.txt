@@ -38,7 +38,6 @@ didn’t work due to the fact that we were using render_template and flask could
 find the template folder.
 fixed by adding a template folder and then moving the html files to that folder.
 
-
 Is there anything you dont know how to do? How can you find out?
 
 pip install flask - installerar ett ramverk flask vilket möjliggör det att utveckla hemsidor inom python
@@ -57,6 +56,10 @@ code . = opens the current folder in visual studio code
 
 testing
 automized test makes it faster, easier and more efficient to test parts of the code that are often tested.
+
+overall improvements:
+For future projects I should remember to comment the code a lot more, as that will make it easier to see what everything does as it is easy to forget if you are not working on the code for a couple of days.
+Try and work in smaller segments: In the beginning i tried to implement alot at the same time, this led to confusion and bugs and just overall made it a lot harder to write the code. In the future i should keep in mind to divid a problem into smaller parts, for example if i want to create a button that orders a hamburger I should first focus on making the button and not too much about making it work.
 
 ----Debugging part----
 I started with putting a breakpoint on the variable total_price and input the variables total_price and quantity in the “watch” window in visual studio code.
@@ -80,4 +83,6 @@ When I try to change or cancel the order midway through, none of the variables a
 “Continue” was then used in order to reach a breakpoint that was put further down in the code.
 
 The hardest part about debugging for me was getting started as I didn’t know where to put the debugging points, what all the functions did and so forth. But as I used it, it became a lot easier to understand and use.
-The debugger will be of great use in future projects when I want to observe how, for example, a variable or function changes as the program is running. This will help me be able to spot and fix bugs or other problems that may be affecting my code.
+The debugger will be of great use in future projects when I want to observe how, for example, a variable or function changes as the program is running. This will help me be able to spot and fix bugs or other problems that may be affecting my code. 
+
+For future debugging sessions, if I know what variable i want to watch, I should directly put them in the watch tab. This is something that wasntä a big problem this time since we didn't have to many variables but in bigger projects it might be hard to find when looking through the local variables list. This is something I started doing in the later debugging sessions and what i should keep in mid for future ones.
