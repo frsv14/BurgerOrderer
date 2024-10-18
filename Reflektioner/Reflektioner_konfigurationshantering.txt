@@ -55,3 +55,4 @@ Vi kollade upp gitignore och löste så vi bara skickade med filer som skulle co
 
 • Vad lyckades ni inte lösa? Varför inte?
 Vi har inte haft några problem som inte gått att lösa!
+

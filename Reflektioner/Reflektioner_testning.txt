@@ -1,8 +1,16 @@
+Testning
+
 1. Namn på alla i teamet.
+Albin
+Freddy 
+Herman
+Robin
 
 2. Länk till projektets sida på git-servern.
+https://github.com/frsv14/BurgerOrderer
 
 3. Kort sammanfattning om vilken funktionalitet ni har testat.
+
 
 4. Kort sammanfattning om hur ni har genomfört testerna.
 

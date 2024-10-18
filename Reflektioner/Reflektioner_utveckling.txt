@@ -1,0 +1,92 @@
+development
+
+1. Names for everyone on the team.
+Albin 
+Freddy 
+Herman 
+Robin 
+
+2. Link to the project on github:
+https://github.com/frsv14/BurgerOrderer
+
+
+3. Short summary of what you have implemented. 
+Describe in 5-10 sentences what you have done and how you have thought about it.
+
+• The project at large:
+The project is a complete system for ordering and customizing burgers. It then shows the kitchen
+what has been ordered.
+
+• Each container:
+
+BurgerOrderer: 
+This container handles the order and confirmation site. It runs a Flask application that allows
+users to place orders and view confirmations.
+Components:
+Dockerfile: Defines the Python environment and sets up the Flask application.
+app.py: Main application file that sets up the Flask application, defines routes, and handles HTTP requests.
+templates/: Contains HTML templates for rendering the order and confirmation pages.
+static/: Contains static files like CSS and JavaScript.
+
+
+Kitchenview:
+This container handles the kitchen and admin sites. It runs a Flask application that allows kitchen staff to 
+view and manage orders and administrators to manage the menu.
+Components:
+Dockerfile: Defines the Python environment and sets up the Flask application.
+app.py: Main application file that sets up the Flask application, defines routes, and handles HTTP requests.
+templates/: Contains HTML templates for rendering the kitchen and admin pages.
+static/: Contains static files like CSS and JavaScript.
+
+
+MenuStore:
+This container is responsible for managing the database. It uses MySQL to stor and manage the 
+applications data.
+Components:
+Dockerfile: Defines the MySQL image and sets up the database.
+database.sql: Contains SQL commands to set up the database schema and insert initial data.
+
+• Each module:
+
+app.py: 
+This is the main application file for both BurgerOrderer and KitchenView.
+It contains the Flask application setup, route definitions and functions to handle various endpoints.
+This module sets up the flask application and defines routes for handling http requests. 
+It also includes functions for interacting with the database.
+
+database.sql: 
+This module is responsible for setting up the database schema and initializing the
+database with initial data. 
+This is typically run once to set up the database.
+
+cartscript.js: 
+This is not used at the moment but it handles client-side functionality for the cart,
+such as adding and removing items and updating the cart display.
+
+Each container is set up with its own Dockerfile and is orchestrated using docker-compose.yml to ensure 
+they work together seamlessly.
+
+4. Your experiences on how the project was carried out.
+
+• What went well? • What went less well?
+Everything in the project has went well until we noticed that we understood the assignment a bit wrong.
+We did everything in a single container using sqlite3.
+When we were supposed to split it up into 3 different containers that had the kitchenview,burgerorderer
+and menustore seperate with seperate dockerfiles using docker-compose.
+
+
+• How did you solve the difficulties? Could you have done it differently?
+When we then noticed the problem and tried to split it up to three different containarized applications
+we found out that docker-compose does not work with sqlite3.
+So we had to rewrite it using MySQL and seperate our flask apps into two different sections, one for kitchenview and 
+one for BurgerOrderer.
+We had to make dockerfiles for each section and then use docker-compose to build it.
+
+
+• What did you fail to solve? Why did it fail?
+
+5. Your experiences working with containers.
+• What went well?
+• What went less well?
+• How did you solve the difficulties? Could you have done it differently?
+• What did you fail to solve? Why did it fail?

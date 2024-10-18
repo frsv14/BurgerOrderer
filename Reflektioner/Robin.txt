@@ -1,0 +1,169 @@
+
+We all created our own accounts on GitHub, which we chose to use because it seems to be the most popular.
+In GitHub, we created a repository named "burgerorderer" and added everyone to it.
+Now we have it set up so we can upload, download, and edit each other's code.
+
+I used an extension in VsCode to handle git, i thought it was much easier to have a interface to work with instead of using the 
+usual git commands like:
+
+git init (Initializes a new Git repository.)
+git clone (Clones an existing repository from a remote server.)
+git status (Shows the status of changes as untracked, modified, or staged.)
+git add (Adds files to the staging area.)
+git commit (Records changes to the repository with a message.)
+git push (Pushes changes to a remote repository.)
+git pull (Fetches and merges changes from a remote repository.)
+git branch (Creates and switches to a new branch)
+git checkout (Switches to a different branch.)
+git merge (Merges changes from one branch into the current branch.)
+git log(Shows the commit history.)
+
+I started by setting up Flask in Python. 
+I had to install flask using "pip install Flask" 
+Flask is a framework in Python that makes it easy to build web pages.
+I googled what would work best for this task and found that Flask seemed to be the best option, and it was also recommended for Python by the course coordinator.
+I chose Python because it is what we are working with in our other course, so it felt like the easiest option right now, even 
+though many other languages would probably have worked fine as well, it would've just been a bit harder as we had no experiences
+with other languages. 
+
+We created 2 Python files named "app.py" and "database.py", and then templates where the different HTML pages will be located.
+
+In app.py, the main foundation is where requests from the "frontend" come and fetch information from the database.
+Here is also the "routing" that determines which function to run depending on which page the user is on.
+
+In database.py, the database is handled, here are functions to create, read, update, and delete functions in the database.
+
+To store burgers and orders, We chose SQLite. It is a small and simple database that I thought would fit well for this project.
+In fact, no container is needed for it as it is directly on the hard drive, but you can connect it to, for example, Docker if you want.
+
+To build the database, I needed to create tables:
+I started by making 3 tables, Burgers, Orders, and Customizations.
+Burgers save the name,desc and price of each burger.
+Orders store information about orders made, such as which burger and how many.
+Customizations take in what should be modified on the burgers. For example, "Bacon" or "no tomato".
+
+I added some burgers to the "Burgers" table. Cheeseburger, Bacon burger, and vegetarian.
+
+It felt easiest to start this way so we can start building the rest of the program and connect it directly to the database.
+
+
+
+
+The text above is before we had to recreate it for the use with MySQL and docker-compose.
+
+
+Database Migration from SQLite to MySQL
+I had to install an extension in python to handle sql connections: pip install mysql-connector-python.
+Original Setup:
+
+The application initially used SQLite, a lightweight, file-based database.
+SQLite was chosen for its simplicity and ease of use, with no need for a separate container.
+It could be run with docker, but didn't support docker-compose.
+
+Migration to MySQL:
+
+Migrated the database from SQLite to MySQL to better support containerization and scalability.
+Updated the database schema and SQL queries to be compatible with MySQL.
+
+
+Containerization with Docker
+Original Setup:
+
+The application was running directly on the host machine without containerization.
+SQLite was used, which did not require a separate container.
+
+Containerization:
+
+Created Dockerfiles for each service (BurgerOrderer, KitchenView, and MenuStore) to define their environments.
+Used Docker Compose to run all the services and handle their dependencies.
+
+
+Updating Database Connection
+Original Setup:
+
+The application connected to an SQLite database file directly on the hard drive.
+
+Updated Setup:
+
+Updated the database connection logic to connect to a MySQL database running in a Docker container.
+Modified the connection parameters to match the MySQL setup.
+
+
+Modifying SQL Queries
+Original Setup:
+
+SQL queries used SQLite syntax and placeholders (?).
+
+Updated Setup:
+
+Updated SQL queries to use MySQL syntax and placeholders (%s).
+
+Database Connection:
+
+Updated the connect_db function to connect to the MySQL database.
+
+
+
+Debug-session:
+
+1. Identify the Issue
+Problem: Users are unable to log in to the application. They receive an "Invalid credentials" error even when entering the correct username and password.
+
+2. Reproduce the Issue
+Step 1: Start the Docker containers using docker-compose up --build.
+Step 2: Access the application at http://localhost:5001 for BurgerOrderer and http://localhost:5002/kitchen for KitchenView.
+Step 3: Attempt to log in using the username "admin" and password "password".
+Observation: The login attempt fails with an "Invalid credentials" error.
+
+3. Diagnose the Issue
+ Check the login function in app.py for KitchenView.
+
+ Identify potential issues:
+The SQL query uses ? placeholders, which is correct for SQLite but not for MySQL.
+The password hashing and verification might be incorrect.
+
+4.Set breakpoints and monitor variables:
+
+Set breakpoints at the start of the login function.
+Monitor the values of "username" and "password".
+Set a breakpoint before the SQL query to check if the data is correctly passed.
+Set a breakpoint after fetching the user to check if the user data is correctly retrieved.
+
+5. Run the application in debug mode and reproduce the issue.
+
+Breakpoint and Variables Monitored:
+
+Breakpoint 1: Start of login function.
+Variables "username", "password".
+
+Breakpoint 2: Before the SQL query.
+Variables "username".
+
+Breakpoint 3: After fetching the user.
+Variables "user".
+
+Observations:
+
+Breakpoint 1: Data is correctly retrieved
+username:admin
+password:password
+
+Breakpoint 2: SQL query uses "?" placeholders,
+which is incorrect for MySQL.
+
+Breakpoint 3: User data is not retrieved correctly, resultning in user being "None".
+
+Step 5: Fix the Issue
+ Update the login function in app.py to use %s placeholders for MySQL.
+
+
+Step 6: Test the fix
+ Rebuild and run the Docker containers using docker-compose up --build.
+ Access the application and attempt to log in again using the username admin and password password.
+
+ Now the login attempt is successful, and the user is redirected to kitchen view.
+
+ What went well: 
+ The issue was quickly identified and fixed by setting breakpoints and monitoring variables.
+ Improvements:
+ Have more detailed error logging to catch SQL syntax errors earlier.
