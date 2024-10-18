@@ -30,6 +30,8 @@ I added some burgers to the "Burgers" table. Cheeseburger, Bacon burger, and veg
 It felt easiest to start this way so we can start building the rest of the program and connect it directly to the database.
 
 
+
+
 The text above is before we had to recreate it for the use with MySQL and docker-compose.
 
 
