@@ -1,1 +1,45 @@
 
+Vilka git-kommandon använder ni? Vad gör de?
+github = learned mostly through internet, lectures, assignments and test
+
+git bash:
+pwd = check which path you are currently in
+ls = checks the contents of the folder you are standing in
+cd {folder path} = go to a different folder
+git clone = clones the repository files
+github checkout {branch name} = creates a new branch in github
+git branch = check current local branches in repository
+git branch -r = check remote branches in the repository
+git merge {branch name} = merges the branch you are currently in with the specified one
+git branch -a = views all local branches in a project
+
+git push -u origin {branch-name} = pushes the branch onto github for everyone in the project to see/use, -u stands for upstream and makes git bash remember that repository location an makes it so that you can use git pull/push without having to write the branch names as well 
+
+Vilka svårigheter stöter ni på? Hur löser ni dem?
+Add a “Remove from cart” button for every element in the cart. The difficulties arose when trying to
+add a button next to every element and how to make them be able to remove stuff from the cart 
+when pressed.
+This problem got solved by using appendChild() to append the button to every element in the array. In order to make the button have the ability to remove stuff the addEventListener() 
+method was used to make it so that when the button is pressed the corresponding element got removed from the array
+
+docker image couldn’t be created with the error message: 
+“ERROR [internal] load metadata for docker.io/library/python:3.9-slim“
+
+Solution: In the file “Dockerfile” change “FROM python:3.9-slim” to “FROM python:3.9“
+
+One more problem that occurred is that the entire cart does not get sent over to the kitchen, only the last addition does. For example if i add a cheeseburger and then a baconburger to the cart, only the baconburger will be sent to the kitchen.
+Unfortunately we couldn’t solve this issue before the assignment was due but what I suspect is the issue is taht the kitchen does not get the array sent over and whenever you enter a new burger to the cart it overrides the last choice. So although the cart is shown correctly for the user, the kitchen does not see it that way.
+
+Building docker images for the different sites (Kitchenview, ordersite):
+app.py not finding the html sites
+didn’t work due to the fact that we were using render_template and flask couldn't 
+find the template folder.
+fixed by adding a template folder and then moving the html files to that folder.
+
+
+
+Finns det något som ni inte vet hur man gör? Hur kan ni ta reda på det?
+
+pip install flask - installerar ett ramverk flask vilket möjliggör det att utveckla hemsidor inom python
+pip install sqlite - installerar ett bibliotek som möjliggöra att använda och skapa databaser i python (changed database to mysql later instead of sqlite)
+
