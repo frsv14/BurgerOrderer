@@ -47,7 +47,8 @@ We also had one “app.py” file for all the  files but we had to split that up
 We had trouble getting the database to work with docker compose, and we came to a conclusion that sqlite probably not works well with docker compose. 
 So we had to use mysql instead. Now it works, and all the containers are running on different ports and is connected with docker compose.
 
-I changed the @app.route in kitchenview app.py from /kitchen to / so you dont have to type /kitchen in the url.  
+I changed the @app.route in kitchenview app.py from /kitchen to / so you dont have to type /kitchen in the url.
+We had the same problem in kitchenview when you clicked on "complete" You go redirected to /kitcehn instead of /, so we had to change the same thing.
 I changed the password from "example" in all the files. 
 I added instructions for how to start the program in the READEME.md file 
 **Debugging Experience**
