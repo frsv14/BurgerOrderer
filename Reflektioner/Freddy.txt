@@ -1,3 +1,32 @@
-11/9 - 24
+I started by reading to understand the teacher's vision for the project. 
+Once I had a clear grasp, I created a rough private copy before our first meeting. 
+During that meeting, we identified the three main components: the KitchenView, the BurgerOrderer, 
+and the database (along with the server). This helped us plan more effectively and gain a
+solid understanding of the project.
 
-The group projekt has finnaly begun. When 
+We also set up our GitHub accounts in that first meeting. Since I already had one, I 
+continued using it. Afterward, we split up to start working on the project. The second meeting 
+served as a check-in to see how everyone was progressing. We didn’t impose strict boundaries 
+on tasks, allowing us to support one another whenever someone faced time constraints or challenges. 
+This collaborative approach made the process smoother for the team.
+
+The third meeting came a bit later, as we were nearing completion of the site, 
+which relieved the entire team. By that point, we were just three weeks away from the deadline. 
+Our remaining tasks involved thorough bug testing and implementing various features, 
+such as the order cart. I focused on improving the admin side while also working on optimizing the
+database.
+
+Debugging went well, and nearly everything was functioning as expected. 
+We conducted manual tests while also setting up automated tests, during which I began
+learning about pytest. This Python library proved helpful for testing our code. However,
+we also attempted to implement Docker at this stage, which became the most
+challenging aspect of the project. Despite the difficulties, we ultimately achieved a
+reliable build in Docker.
+
+Next came the introduction of Docker Compose, which initially seemed almost impossible given
+our current setup. After a long night of work and some frustration, 
+we managed to create a semi-functional website using Docker Compose, complete with a database. 
+With that, we can officially say that we’ve completed this project.
+
+As for my part, I was supposed to create improved Python tests, but due to time constraints, 
+I wasn’t able to finish them.
