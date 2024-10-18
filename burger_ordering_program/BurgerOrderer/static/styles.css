@@ -49,7 +49,7 @@ input[type="text"], input[type="password"], input[type="number"], select, textar
     box-sizing: border-box;
 }
 
-button, .btn, .complete-btn, .logout-button, .order-button {
+button, .btn, .order-button {
     padding: 10px 20px;
     background-color: #23d129;
     color: #fff;
@@ -62,7 +62,7 @@ button, .btn, .complete-btn, .logout-button, .order-button {
     margin-top: 10px;
 }
 
-button:hover, .btn:hover, .complete-btn:hover, .logout-button:hover, .order-button:hover {
+button:hover, .btn:hover, .order-button:hover {
     background-color: #218838;
 }
 
@@ -96,12 +96,12 @@ tbody tr:hover {
 }
 
 
-.order-confirmation, .kitchen-show, .admin-page {
+.order-confirmation{
     font-family: Arial, sans-serif;
     margin: 20px;
 }
 
-.order-confirmation h1, .kitchen-show h1, .admin-page h1 {
+.order-confirmation h1{
     color: #2E8B57;
 }
 
@@ -126,8 +126,3 @@ tbody tr:hover {
     background-color: #3CB371;
 }
 
-.admin-page table, .kitchen-show table {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0 auto;
-}
