@@ -5,7 +5,7 @@ services:
     build: ./MenuStore
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: example
+      MYSQL_ROOT_PASSWORD: password
       MYSQL_DATABASE: burgerdb
     ports:
       - "3306:3306"
