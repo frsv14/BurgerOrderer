@@ -1,4 +1,7 @@
 import sqlite3
+from flask import Flask
+
+app = Flask(__name__)
 
 #skapar kontakt med databasen
 conn = sqlite3.connect('burgers.db')
@@ -58,3 +61,6 @@ cursor.execute('INSERT OR IGNORE INTO burgers (name, description, price) VALUES 
 # Commit och stäng
 conn.commit()
 conn.close()
+
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////app/data/burgers.db'
+
