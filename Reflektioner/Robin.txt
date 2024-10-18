@@ -3,7 +3,24 @@ We all created our own accounts on GitHub, which we chose to use because it seem
 In GitHub, we created a repository named "burgerorderer" and added everyone to it.
 Now we have it set up so we can upload, download, and edit each other's code.
 
-I started by setting up Flask in Python. Flask is a framework in Python that makes it easy to build web pages.
+I used an extension in VsCode to handle git, i thought it was much easier to have a interface to work with instead of using the 
+usual git commands like:
+
+git init (Initializes a new Git repository.)
+git clone (Clones an existing repository from a remote server.)
+git status (Shows the status of changes as untracked, modified, or staged.)
+git add (Adds files to the staging area.)
+git commit (Records changes to the repository with a message.)
+git push (Pushes changes to a remote repository.)
+git pull (Fetches and merges changes from a remote repository.)
+git branch (Creates and switches to a new branch)
+git checkout (Switches to a different branch.)
+git merge (Merges changes from one branch into the current branch.)
+git log(Shows the commit history.)
+
+I started by setting up Flask in Python. 
+I had to install flask using "pip install Flask" 
+Flask is a framework in Python that makes it easy to build web pages.
 I googled what would work best for this task and found that Flask seemed to be the best option, and it was also recommended for Python by the course coordinator.
 I chose Python because it is what we are working with in our other course, so it felt like the easiest option right now, even 
 though many other languages would probably have worked fine as well, it would've just been a bit harder as we had no experiences
@@ -36,6 +53,7 @@ The text above is before we had to recreate it for the use with MySQL and docker
 
 
 Database Migration from SQLite to MySQL
+I had to install an extension in python to handle sql connections: pip install mysql-connector-python.
 Original Setup:
 
 The application initially used SQLite, a lightweight, file-based database.
