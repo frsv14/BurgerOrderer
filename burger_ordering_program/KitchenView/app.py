@@ -47,7 +47,7 @@ def complete_order():
     conn.commit()
     conn.close()
     
-    return redirect('/kitchen')
+    return redirect('/')
 
 #Aminvy för att lägga till, ändra och ta bort burgare
 @app.route('/admin')
