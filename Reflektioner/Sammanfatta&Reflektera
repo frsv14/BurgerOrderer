@@ -1,0 +1,61 @@
+Konfigurationshantering.
+
+1. Namn på alla i teamet.
+
+Albin
+Freddy
+Herman
+Robin
+
+2. Link to the projects github page
+
+https://github.com/frsv14/BurgerOrderer
+
+3. Short summary of what configuration management is and why it is used
+Configuration management is used because it ensures that all the developers works with the same version of the software, tracks changes made, automating and standardizing systemsettings, and to be able to access older version of the code if any problems arises. 
+This makes it easier to handle larger projects and avoid mistakes
+
+4. Short summary of what the most common workflow with git is, as well as the git-commands that is used
+
+Det vanligaste arbetsflödet med Git ser ungefär ut så här:
+The usual workflow with Git roughly looks like this:
+
+Clone a repo: Copy teh existing repository from Github to yuor local computor.
+git clone <repo-url>
+
+Create a new branch: Work in a seperate branch to keep the changes made isolated from the main code.
+git checkout -b <ny-gren>
+
+Makes chagnes: Makes changes to the files in the project.
+
+Staga ändringar: Förbered ändrade filer för att sparas i Git.
+git add <filnamn> eller git add . för alla ändringar.
+
+Stage changes: Prepare the changed files to be saved in git.
+git add <filename> or git add . to add all the changes
+
+save changes (commit): Create a point in the history with a message that describes what you have changed.
+git commit -m "Description of changes"
+
+Push to remote-repo: push the changes to the remote repo (Example GitHub)
+git push origin <new-branch>
+
+Create a new pull request: When the changes are ready, open a pull request on GitHub to get the code reviewd and merged with the master branch.
+Pull new changes: Update the local files with the changes made in the remote repository.
+git pull
+
+5. Your experiences about working with configuration management. 
+
+• What went well?
+To share the code with eachother
+
+• What was harder?
+Before you figured out how to remove changes that should not be commited, a few files that should not have been commited accidently got pushed to the repository
+
+• How did you solve the problems? Could you have done it differently?
+Vi kollade upp gitignore och löste så vi bara skickade med filer som skulle committas.
+We looked up gitignore and solved it så that only files that should be commited was.
+
+• What did you not manage to solve? Why not?
+We unfortunately did not have enough time to fix it so that the user could send more than one item to the kitchen. 
+We successfully created a cart that the user could see and add items to but those items did not get sent over to the kitchen.
