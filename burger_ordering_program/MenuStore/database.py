@@ -4,7 +4,7 @@ import _mysql_connector
 conn = _mysql_connector.connect(
     host ='mysql',
     user ='root',
-    password ='example',
+    password ='password',
     database ='burgerdb'
 )
 cursor = conn.cursor()

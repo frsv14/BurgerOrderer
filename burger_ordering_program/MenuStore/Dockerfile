@@ -2,7 +2,7 @@
 FROM mysql:8.0
 
 # Set environment variables for MySQL
-ENV MYSQL_ROOT_PASSWORD=example
+ENV MYSQL_ROOT_PASSWORD=password
 ENV MYSQL_DATABASE=burgerdb
 
 # Copy the database initialization script into the container

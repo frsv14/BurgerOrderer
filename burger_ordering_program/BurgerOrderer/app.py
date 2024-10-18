@@ -12,7 +12,7 @@ def connect_db():
     conn = mysql.connector.connect(
         host ='mysql',
         user ='root',
-        password ='example',
+        password ='password',
         database ='burgerdb'
     )
     return conn
