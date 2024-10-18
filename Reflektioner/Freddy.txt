@@ -1,32 +1,32 @@
-I started by reading to understand the teacher's vision for the project. 
-Once I had a clear grasp, I created a rough private copy before our first meeting. 
-During that meeting, we identified the three main components: the KitchenView, the BurgerOrderer, 
-and the database (along with the server). This helped us plan more effectively and gain a
-solid understanding of the project.
+I began by reading to undersaand the teacher's vision for the project. 
+Once I had a clear grasp, I created a rough private copy before our firsst meting. 
+During that meeting, we recogniced the three main components: the KitchenView, the BurgerOrderer, 
+and the database (along with the server). This will helped us be more efectiv and gain a
+good basis for the project
 
-We also set up our GitHub accounts in that first meeting. Since I already had one, I 
-continued using it. Afterward, we split up to start working on the project. The second meeting 
-served as a check-in to see how everyone was progressing. We didn’t impose strict boundaries 
-on tasks, allowing us to support one another whenever someone faced time constraints or challenges. 
-This collaborative approach made the process smoother for the team.
+We used our git hub accounts and created a project together. Since I already had one i will just continue 
+using it. Afterward, we split up to start working on the project. The second meeting 
+served more as a check-in to see how everyone was working and to se were the project was. We didn’t impose any boundaries 
+on tasks, which made us be able to help one another more whenever someone would have something challenging. 
+This cllaborative construct made the proceses better for the group. 
 
-The third meeting came a bit later, as we were nearing completion of the site, 
-which relieved the entire team. By that point, we were just three weeks away from the deadline. 
-Our remaining tasks involved thorough bug testing and implementing various features, 
-such as the order cart. I focused on improving the admin side while also working on optimizing the
-database.
+And then the thirde meeting came, as we were nearing the finish line of the site, 
+which relived the entire gorup. By that point, we were just three weeks away form the deadlin that was imposed on us by the teacher. 
+Our left over tasks where bug testing and implimentation of various features, 
+such as the orderCart. I focused on the admin side and ironing out most of the buggs there while also working on the
+database. And what data we needed.
 
-Debugging went well, and nearly everything was functioning as expected. 
-We conducted manual tests while also setting up automated tests, during which I began
-learning about pytest. This Python library proved helpful for testing our code. However,
-we also attempted to implement Docker at this stage, which became the most
-challenging aspect of the project. Despite the difficulties, we ultimately achieved a
-reliable build in Docker.
+Debugging went well, and allmost everything worked as intended,  
+We conducted tests(manually) while also setting up som rudementary tests, during which I began
+learn about pytest. This Python library was helpful for testing. We also tried
+to implement Docker, which became the most
+challenging part of the project. Despite the difficulties, we achieved a
+working build in Docker.
 
-Next came the introduction of Docker Compose, which initially seemed almost impossible given
-our current setup. After a long night of work and some frustration, 
-we managed to create a semi-functional website using Docker Compose, complete with a database. 
-With that, we can officially say that we’ve completed this project.
+next we have Docker Compose, which was impossible given
+our curent setup.(we had to rewrite everything almost) After a long night and some frtration, 
+we managed to create functional website using Docker Compose, complete with a database. 
+With that, we can officially say that we’ve finnished this project.
 
-As for my part, I was supposed to create improved Python tests, but due to time constraints, 
-I wasn’t able to finish them.
+As for my part, I was supposed to create Python tests, but due to time constraints, 
+I wasn’t able to finish them at all.
