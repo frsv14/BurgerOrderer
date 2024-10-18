@@ -44,6 +44,17 @@ Is there anything you dont know how to do? How can you find out?
 pip install flask - installerar ett ramverk flask vilket möjliggör det att utveckla hemsidor inom python
 pip install sqlite - installerar ett bibliotek som möjliggöra att använda och skapa databaser i python (changed database to mysql later instead of sqlite)
 
+general things learned:
+const = ger en variabel ett värde som inte går att ändra senare i koden
+
+splice() = adds or removes items in an array
+
+appendChild() = method that appends an element.
+
+addEventListener() = attaches an eventhandler to a element
+
+code . = opens the current folder in visual studio code 
+
 ----Debugging part----
 I started with putting a breakpoint on the variable total_price and input the variables total_price and quantity in the “watch” window in visual studio code.
 
