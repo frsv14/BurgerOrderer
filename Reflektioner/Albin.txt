@@ -1,11 +1,13 @@
 
-Vilka git-kommandon använder ni? Vad gör de?
+What git-commands do you use? What do they do?
 github = learned mostly through internet, lectures, assignments and test
 
-git bash:
+terminal commands:
 pwd = check which path you are currently in
 ls = checks the contents of the folder you are standing in
 cd {folder path} = go to a different folder
+
+git commands:
 git clone = clones the repository files
 github checkout {branch name} = creates a new branch in github
 git branch = check current local branches in repository
@@ -15,7 +17,7 @@ git branch -a = views all local branches in a project
 
 git push -u origin {branch-name} = pushes the branch onto github for everyone in the project to see/use, -u stands for upstream and makes git bash remember that repository location an makes it so that you can use git pull/push without having to write the branch names as well 
 
-Vilka svårigheter stöter ni på? Hur löser ni dem?
+What difficulties do you encounter? How do you solve them?
 Add a “Remove from cart” button for every element in the cart. The difficulties arose when trying to
 add a button next to every element and how to make them be able to remove stuff from the cart 
 when pressed.
@@ -37,9 +39,31 @@ find the template folder.
 fixed by adding a template folder and then moving the html files to that folder.
 
 
-
-Finns det något som ni inte vet hur man gör? Hur kan ni ta reda på det?
+Is there anything you dont know how to do? How can you find out?
 
 pip install flask - installerar ett ramverk flask vilket möjliggör det att utveckla hemsidor inom python
 pip install sqlite - installerar ett bibliotek som möjliggöra att använda och skapa databaser i python (changed database to mysql later instead of sqlite)
 
+----Debugging part----
+I started with putting a breakpoint on the variable total_price and input the variables total_price and quantity in the “watch” window in visual studio code.
+
+The reason a breakpoint was put on the variable total price is because I wanted the program to run up until it reaches that variable where I can then see how it changes when the program is running.
+
+After the program started I tried to order a burger, after that the program would run as normal until it reached the breakpoint. At this point “step into” and “step out” was used in order to step into and out of the function.
+
+I first tried to order a “Ostburgare” that cost 120 kr. When I reached the breakpoint I used step into to see the variables change to total_price = 120.0 och quantity=’1’.
+
+After that “step out” was used in order to back out of the function and try to order something else.
+
+This time I tried to order seven “Baconburgare” that cost 130 kr. this time i could see the quantity variable say quantity=’7’ and the price variable say total_price=910.0.
+
+After that I tested to order a new burger but this time put the quantity to 4.5 and observed that it didn’t allow me to order and the error message ”Ange ett giltigt värde, de två närmsta giltiga värdarna är 4 och 5” was brought forward.
+
+When I try to put in custom customizations such as No lettuce, No tomato and write my own customizations I can see variables storing those choices appear in the locals variable window above the watch window.
+
+When I try to change or cancel the order midway through, none of the variables are affected as the values will only be sent after the button “Order now!” is pressed.
+
+“Continue” was then used in order to reach a breakpoint that was put further down in the code.
+
+The hardest part about debugging for me was getting started as I didn’t know where to put the debugging points, what all the functions did and so forth. But as I used it, it became a lot easier to understand and use.
+The debugger will be of great use in future projects when I want to observe how, for example, a variable or function changes as the program is running. This will help me be able to spot and fix bugs or other problems that may be affecting my code.
