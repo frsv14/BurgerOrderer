@@ -1,0 +1,78 @@
+I began by creating a "test" repository and pushing my first commit. As I had never used GitHub or Git before, I did some research to understand how they work.
+
+The commands i used for git was:
+
+- git clone [url]: to clone a repo.
+- git commit -m: to commit changes
+- git push: To push local commits
+- git pull: to fetch and merge changes.
+
+But mostly i used github desktop since I found it easier to navigate.
+I started developing a "burgerstore" page but realized I was focusing too much on HTML and CSS rather than the application's functionality. 
+I shifted my attention to researching databases, specifically SQLite, which is built into Python. 
+I experimented with creating tables and inserting values to learn how it worked. I also watched some explaining youtube videos.
+
+When I checked our GitHub repository, I noticed one group member had committed the majority of the assignment. 
+Since I was new to both Python and databases, I found some of the code challenging to understand, 
+but I recognized the database structure from my earlier experiments, and some of the python code. 
+But it was more advanced than what I had done so I felt that I could contribute so much I decided to identify areas for improvement. 
+I realized that the application only allowed the user to order one burger at a time, so I figured that adding a cart function to enable ordering multiple burgers would be a good idea.
+
+I worked on this by modifying the existing "ordersite.html" file, adding new HTML and JavaScript. 
+I chose JavaScript because it’s commonly used with HTML in web applications, and I had some prior experience with it. 
+I implemented an empty array called cartItems to store items in the cart. 
+I added an event listener to the 'add-to-cart' button that retrieves the selected burger and quantity, calculates the price, and stores the item in cartItems. 
+Then I created the updateCart function to iterate over cartItems, generating a list for each item to display in the user interface.
+
+First I wrote the javascript in the html code between two <script> tags. 
+But i decided to “clean” up the "ordersite.html" file by moving the JavaScript to a separate file, cartScript.js, in the “static” folder and linking the html file to it. 
+The first thing I had to add in the javascript when i put it in a separate folder was “document.addEventListener('DOMContentLoaded', function()”). 
+That was added because the code did not work when I moved it to a separate folder. Because the DOM was not fully loaded when the script was executed. 
+And since the javascript manipulates buttons this ensures that all the elements are available when the script runs. 
+
+One of the problems with cart is that the “order now” button is still connected to the orderform not the cart. 
+So when you press “order now” it places the order on the burger in the orderform even if you have 3 burgers in the cart.  
+Thats something that I could look into if I had more time.
+
+One problem I’ve had with starting a virtual environment when running the app is that i started the environment in the programs folder.
+ Which caused it to add a lot of files to the program that was not supposed to be there. 
+ I fixed that by starting the virtual environment outside of the program, that way those files don’t get commited to the repo. 
+The commands I used to start a “venv” was (python3 -m venv path/to/venv, source path/to/venv/bin/activate). 
+Now since we run the program through docker I don’t need to start a virtual environment. 
+
+We thought that we just had finished the project but we discovered that we had the wrong structure in the project. 
+We ran the ordersite, kitchenview and the database in the same container, instead of 3. 
+So we had to fix that by creating 3 seperate dockerfiles for each container and run them together with docker compose. 
+We also had one “app.py” file for all the  files but we had to split that up. 
+We had trouble getting the database to work with docker compose, and we came to a conclusion that sqlite probably not works well with docker compose. 
+So we had to use mysql instead. Now it works, and all the containers are running on different ports and is connected with docker compose.
+
+I changed the @app.route in kitchenview app.py from /kitchen to / so you dont have to type /kitchen in the url.  
+I changed the password from "example" in all the files. 
+I added instructions for how to start the program in the READEME.md file 
+**Debugging Experience**
+
+When  I was going to debug the [app.py](http://app.py) file i got an error: 
+“Frame skipped from debugging during step-in.Note: may have been skipped because of "justMyCode" option (default == true). Try setting "justMyCode": false in the debug configuration (e.g., launch.json). “. 
+I had to make a launch.json file and change justMyCode to false, which lets me step in library code. Then it worked. 
+That problem only occurred when I was trying to debug the code on my computer with macOS. I tried it on another machine and it worked better.
+
+So I started by putting a breakpoint on the total_price function and added “total_price” and “quantity” in the watch window. 
+I chose to set the breakpoint on total_price since I wanted the code to run until that function was reached in the code, 
+so that I could step into the function and se how the variables changed depending on what I ordered. 
+When the code stopped at my breakpoint i ordered a burger and could see that the variables showed up in the watch window,  “total_price = 130”  and “quantity = 1”.
+Then I used step out to to step out of the function and ordered another burger with another price and the quantity set to 10.
+The variables changed to: “total_price = 1200” and “quantity = 10”. 
+I used “step-out” to step out of the function again and tried to enter a float number as quantity.
+A text showed up on the website “Ange ett giltigt värde, de två närmsta värdena är 1 och 2.”. 
+I also tried to add different customizations for the burger and those variables showed up in “local variables” panel. 
+If i try to cancel the order half way through no variabels shows up or change since the “order-now” button that sends all the information was not clicked.  
+I also had another breakpoint further down in the code and I used “continue” to run the code and then stop at my breakpoint.
+
+**Conclusion**
+
+At first I had some problems debugging this code since it’s more advanced that what I’m used to, and more things connected together. 
+But it worked out fine when i got more used to the code. I use the debugger a lot in the python course to easier see what’s happening when the code executes.
+And if a variable gets the wrong value you can easier see where it gets that value from if you debug the code, rather than just reading the code in the file. 
+Setting breakpoints where you want to troubleshoot will help you focus on just the code you are having trouble with.
+One thing that I could do better is that debug the code more often to get a better understanding of the functions. 
