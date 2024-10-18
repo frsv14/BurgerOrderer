@@ -30,7 +30,7 @@ docker image couldn’t be created with the error message:
 Solution: In the file “Dockerfile” change “FROM python:3.9-slim” to “FROM python:3.9“
 
 One more problem that occurred is that the entire cart does not get sent over to the kitchen, only the last addition does. For example if i add a cheeseburger and then a baconburger to the cart, only the baconburger will be sent to the kitchen.
-Unfortunately we couldn’t solve this issue before the assignment was due but what I suspect is the issue is taht the kitchen does not get the array sent over and whenever you enter a new burger to the cart it overrides the last choice. So although the cart is shown correctly for the user, the kitchen does not see it that way.
+Unfortunately we couldn’t solve this issue before the assignment was due but what I suspect is the issue is that the kitchen does not get the array sent over and whenever you enter a new burger to the cart it overrides the last choice. So although the cart is shown correctly for the user, the kitchen does not see it that way.
 
 Building docker images for the different sites (Kitchenview, ordersite):
 app.py not finding the html sites
