@@ -1,18 +1,22 @@
 from flask import Flask,flash , render_template, request, redirect, session, url_for
 from werkzeug.security import check_password_hash
-import sqlite3    
+import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a strong secret key
+app.secret_key = 'your_secret_key'
 
 #Ansluter till databasen    
 def connect_db():
-    sqlite3.Connection
-    conn = sqlite3.connect('burgers.db')
+    conn = mysql.connector.connect(
+        host='mysql',
+        user='root',
+        password='example',
+        database='burgerdb'
+    )
     return conn
 
 #Köksvy: Visar order
-@app.route('/')
+@app.route('/kitchen')
 def kitchen():
     if 'user_id' not in session:
         return redirect(url_for('login'))
@@ -39,7 +43,7 @@ def complete_order():
     
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute("UPDATE orders SET status = 'completed' WHERE id = ?", (order_id,))
+    cursor.execute("UPDATE orders SET status = 'completed' WHERE id = %s", (order_id,))
     conn.commit()
     conn.close()
     
@@ -68,7 +72,7 @@ def add_burger():
     description = request.form.get('description')
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO burgers (name, description, price) VALUES (?, ?, ?)', (name, description, price))
+    cursor.execute('INSERT INTO burgers (name, description, price) VALUES (%s, %s, %s)', (name, description, price))
     conn.commit()
     conn.close()
     return redirect('/admin')
@@ -92,17 +96,17 @@ def edit_burger(burger_id):
         flash('Prise not a number', 'warning')
     else :    
         if price != '':
-            cursor.execute('UPDATE burgers SET price = ? WHERE id = ?', (price, burger_id))
+            cursor.execute('UPDATE burgers SET price = %s WHERE id = %s', (price, burger_id))
 
 
     if name != '':
-        cursor.execute('UPDATE burgers SET name = ? WHERE id = ?', (name, burger_id) )
+        cursor.execute('UPDATE burgers SET name = %s WHERE id = %s', (name, burger_id) )
 
     if description != '' :
-        cursor.execute('UPDATE burgers SET description = ? WHERE id = ?', (description, burger_id))
+        cursor.execute('UPDATE burgers SET description = %s WHERE id = %s', (description, burger_id))
 
     if name != '' and price != '' and description != '':
-        cursor.execute('UPDATE burgers SET name = ?, description = ?, price = ? WHERE id = ?', (name, description, price, burger_id))
+        cursor.execute('UPDATE burgers SET name = %s, description = %s, price = %s WHERE id = %s', (name, description, price, burger_id))
 
     conn.commit()
     conn.close()
@@ -115,7 +119,7 @@ def delete_burger(burger_id):
     
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('DELETE FROM burgers WHERE id = ?', (burger_id,))
+    cursor.execute('DELETE FROM burgers WHERE id = %s', (burger_id,))
     conn.commit()
     conn.close()
     return redirect('/admin')
@@ -128,7 +132,7 @@ def login():
         password = request.form.get('password')
         conn = connect_db()
         cursor = conn.cursor()
-        cursor.execute('SELECT * FROM users WHERE username = ?', (username,))
+        cursor.execute('SELECT * FROM users WHERE username = %s', (username,))
         user = cursor.fetchone()
         conn.close()
         if user and check_password_hash(user[2], password):
@@ -146,4 +150,4 @@ def logout():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=5000)
+    app.run(debug=True)

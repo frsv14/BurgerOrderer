@@ -1,31 +1,22 @@
-import sqlite3
+import mysql.connector
 from werkzeug.security import generate_password_hash
 
-# Connect to the database
-conn = sqlite3.connect('burgers.db')
-cursor = conn.cursor()
+def connect_db():
+    conn = mysql.connector.connect(
+        host='mysql',
+        user='root',
+        password='example',
+        database='burgerdb'
+    )
+    return conn
 
-# Create users table if it doesn't exist
-cursor.execute('''
-CREATE TABLE IF NOT EXISTS users (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT NOT NULL
-)
-''')
+def add_user(username, password):
+    conn = connect_db()
+    cursor = conn.cursor()
+    hashed_password = generate_password_hash(password)
+    cursor.execute('INSERT INTO users (username, password) VALUES (%s, %s)', (username, hashed_password))
+    conn.commit()
+    conn.close()
 
-# User details
-username = 'admin'
-password = 'password123'  # Replace with a strong password
-
-# Hash the password
-hashed_password = generate_password_hash(password)
-
-# Insert the user into the database
-cursor.execute('INSERT OR IGNORE INTO users (username, password) VALUES (?, ?)', (username, hashed_password))
-conn.commit()
-
-# Close the connection
-conn.close()
-
-print("User added successfully.")
+if __name__ == '__main__':
+    add_user('admin', 'password')

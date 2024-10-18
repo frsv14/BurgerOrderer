@@ -1,14 +1,20 @@
-from flask import Flask, render_template, request
-import sqlite3    
+from flask import Flask,flash , render_template, request, redirect, session, url_for
+from werkzeug.security import check_password_hash
 from datetime import datetime
+import mysql.connector
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'  # Replace with a strong secret key
+app.secret_key = 'your_secret_key'
 
 #Ansluter till databasen    
 def connect_db():
 
-    conn = sqlite3.connect('burgers.db')
+    conn = mysql.connector.connect(
+        host ='mysql',
+        user ='root',
+        password ='example',
+        database ='burgerdb'
+    )
     return conn
 
 #Hemskärm: Visar order
@@ -16,10 +22,16 @@ def connect_db():
 def order_form():
     conn = connect_db() 
     cursor = conn.cursor()
-    cursor.execute('SELECT * FROM burgers')
-    burgers = cursor.fetchall()
-    conn.close()
-    return render_template('ordersite.html', burgers=burgers)
+    try:
+        cursor.execute('SELECT * FROM burgers')
+    except mysql.connector.Error as err:
+        print(f"Error: {err}")
+        exec('database.py')
+        exec('add_burger.py')
+    finally:
+        burgers = cursor.fetchall()
+        conn.close()
+        return render_template('ordersite.html', burgers=burgers)
     
 #Hantera burger-order
 @app.route('/place_order', methods=['POST'])
@@ -32,23 +44,23 @@ def place_order():
     # Skapar order i databasen
     conn = connect_db()
     cursor = conn.cursor()
-    cursor.execute('INSERT INTO orders (burger_id, quantity, order_time, status) VALUES (?, ?, ?, ?)', (burger_id, quantity, datetime.now(), "pending"))
+    cursor.execute('INSERT INTO orders (burger_id, quantity, order_time, status) VALUES (%s, %s, %s, %s)', (burger_id, quantity, datetime.now(), "pending"))
     order_id = cursor.lastrowid  
     conn.commit()
     
     # Skapar customizations i databasen
     for customization in customizations:
-        cursor.execute('INSERT INTO customizations (order_id, customization) VALUES (?, ?)', (order_id, customization))
+        cursor.execute('INSERT INTO customizations (order_id, customization) VALUES (%s, %s)', (order_id, customization))
     conn.commit()
     
     #Lägger till unika customizations i databasen
     if custom_customizations:
-        cursor.execute('INSERT INTO customizations (order_id, customization) VALUES (?, ?)', (order_id, custom_customizations))
+        cursor.execute('INSERT INTO customizations (order_id, customization) VALUES (%s, %s)', (order_id, custom_customizations))
     
     conn.commit()
     
     # Hämtar information till orderbekräftelsen
-    cursor.execute("SELECT name, price FROM burgers WHERE id = ?", (burger_id,))
+    cursor.execute("SELECT name, price FROM burgers WHERE id = %s", (burger_id,))
     burger = cursor.fetchone()
 
     if not burger or not burger[1]:
@@ -69,4 +81,4 @@ def place_order():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0", port=8000)
+    app.run(debug=True)
