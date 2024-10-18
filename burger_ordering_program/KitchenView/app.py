@@ -16,7 +16,7 @@ def connect_db():
     return conn
 
 #Köksvy: Visar order
-@app.route('/kitchen')
+@app.route('/')
 def kitchen():
     if 'user_id' not in session:
         return redirect(url_for('login'))

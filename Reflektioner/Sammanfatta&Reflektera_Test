@@ -1,10 +1,24 @@
 1. Namn på alla i teamet.
 
+Freddy
+Albin
+Robin
+Herman
+
 2. Länk till projektets sida på git-servern.
+
+https://github.com/frsv14/BurgerOrderer
 
 3. Kort sammanfattning om vilken funktionalitet ni har testat.
 
+We tested all the fetures we implemented and almost got it all working.
+We have still som buggs here and there but it is minor things like the logout button flashes errors
+And you can  
+
 4. Kort sammanfattning om hur ni har genomfört testerna.
+
+via manuellt klicka på de individuella knapparna på hemsidan,
+och faktiskt använda hemsdorna
 
 5. Utskrift från er senaste testsession, så att man kan se:
 
