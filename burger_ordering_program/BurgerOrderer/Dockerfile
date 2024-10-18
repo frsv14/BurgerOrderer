@@ -13,9 +13,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Copy the rest of the application code into the container
 COPY . .
 
-RUN python add_user.py
-
-RUN python database.py
 # Set the environment variable for Flask
 ENV FLASK_APP=app.py
 

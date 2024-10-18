@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    build: ./MenuStore
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: burgerdb
+    ports:
+      - "3306:3306"
+    platform: linux/amd64
+
+  burgerorderer:
+    build: ./BurgerOrderer
+    container_name: burgerorderer
+    environment:
+      FLASK_APP: app.py
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_ENV: development
+    ports:
+      - "5001:5000"
+    depends_on:
+      - mysql
+
+  kitcherview:
+    build: ./KitchenView
+    container_name: kitchenview
+    environment:
+      FLASK_APP: app.py
+      FLASK_RUN_HOST: 0.0.0.0
+      FLASK_ENV: development
+    ports:
+      - "5002:5000"
+    depends_on:
+      - mysql
