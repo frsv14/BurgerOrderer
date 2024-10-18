@@ -1,0 +1,133 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    color: #333;
+    text-align: center;
+}
+
+h1, h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 450px;
+    width: 100%;
+    margin: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], input[type="number"], select, textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+button, .btn, .complete-btn, .logout-button, .order-button {
+    padding: 10px 20px;
+    background-color: #23d129;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 10px;
+}
+
+button:hover, .btn:hover, .complete-btn:hover, .logout-button:hover, .order-button:hover {
+    background-color: #218838;
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+thead {
+    background-color: #007bff;
+    color: #fff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #e2e2e2;
+}
+
+
+.order-confirmation, .kitchen-show, .admin-page {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+.order-confirmation h1, .kitchen-show h1, .admin-page h1 {
+    color: #2E8B57;
+}
+
+.order-confirmation ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.order-confirmation li {
+    margin-bottom: 10px;
+}
+
+.order-confirmation a, .order-button {
+    text-decoration: none;
+    color: white;
+    background-color: #2E8B57;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.order-confirmation a:hover, .order-button:hover {
+    background-color: #3CB371;
+}
+
+.admin-page table, .kitchen-show table {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
