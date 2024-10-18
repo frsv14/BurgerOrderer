@@ -1,58 +1,55 @@
-Konfigurationshantering.
+Configuration Management.
 
-1. Namn på alla i teamet.
+1. Names of everyone in the team.
 
 Albin
 Freddy
 Herman
 Robin
 
-2. Länk till projektets sida på git-servern.
+2. Link to the project's page on the git server.
 
 https://github.com/frsv14/BurgerOrderer
 
-3. Kort sammanfattning om vad konfigurationshantering är och varför det
-används.
+3. A brief summary of what configuration management is and why it is used.
 
-Det används för att säkerställa att alla utvecklare arbetar med samma version av programvaran, spåra vad som ändras, och snabbt kunna återskapa tidigare versioner om något går fel. Det hjälper också att automatisera och standardisera systeminställningar, vilket gör det enklare att hantera stora projekt och undvika misstag.
+It is used to ensure that all developers work with the same version of the software, track what changes, and quickly restore previous versions if something goes wrong. It also helps to automate and standardize system settings, making it easier to manage large projects and avoid mistakes.
 
-4. Kort sammanfattning om det vanligaste arbetsflödet med git, inklusive de
-git-kommandon som används.
+4. A brief summary of the most common workflow with git, including the git commands used.
 
-Det vanligaste arbetsflödet med Git ser ungefär ut så här:
+The most common workflow with Git looks something like this:
 
-Klona ett repo: Kopiera ett existerande repository från GitHub till din lokala dator.
+Clone a repo: Copy an existing repository from GitHub to your local computer.
 git clone <repo-url>
 
-Skapa en ny gren: Arbeta i en separat gren för att hålla ändringarna isolerade från huvudkoden.
-git checkout -b <ny-gren>
+Create a new branch: Work in a separate branch to keep changes isolated from the main code.
+git checkout -b <new-branch>
 
-Gör ändringar: Ändra filer i projektet.
+Make changes: Modify files in the project.
 
-Staga ändringar: Förbered ändrade filer för att sparas i Git.
-git add <filnamn> eller git add . för alla ändringar.
+Stage changes: Prepare changed files to be saved in Git.
+git add <filename> or git add . for all changes.
 
-Spara ändringar (commit): Skapa en punkt i historiken med ett meddelande som beskriver vad du ändrat.
-git commit -m "Beskrivning av ändringar"
+Save changes (commit): Create a point in history with a message describing what you changed.
+git commit -m "Description of changes"
 
-Push till fjärr-repo: Skicka dina ändringar till det gemensamma repo (t.ex. på GitHub).
-git push origin <ny-gren>
+Push to remote repo: Send your changes to the shared repo (e.g., on GitHub).
+git push origin <new-branch>
 
-Skapa en Pull Request: När ändringarna är redo, öppna en Pull Request på GitHub för att få koden granskad och sammanslagen med huvudgrenen.
-Hämta nya ändringar: Uppdatera din lokala kopia med eventuella ändringar från fjärr-repot.
+Create a Pull Request: When the changes are ready, open a Pull Request on GitHub to get the code reviewed and merged with the main branch.
+Fetch new changes: Update your local copy with any changes from the remote repo.
 git pull
 
-5. Era erfarenheter om att arbeta med konfigurationshantering.
+5. Your experiences with working with configuration management.
 
-• Vad gick bra?
-Att dela kod med varandra
+• What went well?
+Sharing code with each other
 
-• Vad gick mindre bra?
-Innan man listade ut hur man tar bort ändringar som inte ska committas, så råkade lite filer som inte behövdes åka med in i repot.
+• What went less well?
+Before figuring out how to remove changes that shouldn't be committed, some unnecessary files accidentally got included in the repo.
 
-• Hur löste ni svårigheterna? Hade ni kunnat göra annorlunda?
-Vi kollade upp gitignore och löste så vi bara skickade med filer som skulle committas.
+• How did you solve the difficulties? Could you have done it differently?
+We looked up gitignore and solved it so that we only included files that should be committed.
 
-• Vad lyckades ni inte lösa? Varför inte?
-Vi har inte haft några problem som inte gått att lösa!
-
+• What did you fail to solve? Why not?
+We haven't had any problems that couldn't be solved!
