@@ -55,6 +55,9 @@ addEventListener() = attaches an eventhandler to a element
 
 code . = opens the current folder in visual studio code 
 
+testing
+automized test makes it faster, easier and more efficient to test parts of the code that are often tested.
+
 ----Debugging part----
 I started with putting a breakpoint on the variable total_price and input the variables total_price and quantity in the “watch” window in visual studio code.
 
