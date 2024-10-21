@@ -11,12 +11,12 @@ https://github.com/frsv14/BurgerOrderer
 
 3. Kort sammanfattning om vilken funktionalitet ni har testat.
 
-We tested all the fetures we implemented and almost got it all working.
-We have still som buggs here and there but it is just minor things.
+We tested all the features we implemented and almost got it all working.
+We still have some buggs here and there but it is just minor things.
 
 4. Kort sammanfattning om hur ni har genomfört testerna.
 
-We manually tested by using the site as it is intended and not as it is intended like writing letters 
+We manually tested by using the site as it is intended and not as it is intended like writing letters
 where the numbers should be etc
 
 
@@ -25,15 +25,15 @@ where the numbers should be etc
 • Hur många tester ni har skrivit
 
 We initially planned to use pytest for automated testing,
-but during our transition to Docker Compose, it seems the testing setup got overlooked. 
-Unfortunately, we can't pinpoint where it went awry. If you check our commits, 
-you'll notice that the test.py file isn’t the one we're looking for, as it was only a temporary 
+but during our transition to Docker Compose, it seems the testing setup got overlooked.
+Unfortunately, we can't pinpoint where it went awry. If you check our commits,
+you'll notice that the test.py file isn’t the one we're looking for, as it was only a temporary
 placeholder. It just had a simple try statement to look if the files existed.
 
 • Vad de testar
 
 The plan was to test the redirects and the database to see what was in it and if it existed
-and to check the database password and username aswell as the 
+and to check the database password and username as well as the
 
 • Hur många tester som lyckas respektive misslyckas
 
@@ -56,7 +56,7 @@ This delay impacted our ability to integrate automated testing.
 
 We could have planned each aspect more effectively,
 as the final stages of getting everything into Docker Compose
-and making it work were quite stressful. A more organized 
+and making it work was quite stressful. A more organized
 approach would have made the process significantly easy.
 
 • Vad lyckades ni inte lösa? Varför inte?
@@ -64,4 +64,4 @@ approach would have made the process significantly easy.
 Making the automated testing, because of time constraints
 
 7. Länk till dokumentationen från era respektive debug-sessioner i era indi-
-viduella ingenjörsdagböcker.
+visuella ingenjörs dagböcker.

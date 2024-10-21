@@ -1,32 +1,32 @@
-I began by reading to undersaand the teacher's vision for the project. 
-Once I had a clear grasp, I created a rough private copy before our firsst meting. 
-During that meeting, we recogniced the three main components: the KitchenView, the BurgerOrderer, 
-and the database (along with the server). This will helped us be more efectiv and gain a
+I began by reading to understand the teacher's vision for the project.
+Once I had a clear grasp, I created a rough private copy before our first meeting.
+During that meeting, we recognized the three main components: the KitchenView, the BurgerOrderer,
+and the database (along with the server). This will helped us be more motivated and gain a
 good basis for the project
 
-We used our git hub accounts and created a project together. Since I already had one i will just continue 
-using it. Afterward, we split up to start working on the project. The second meeting 
-served more as a check-in to see how everyone was working and to se were the project was. We didn’t impose any boundaries 
-on tasks, which made us be able to help one another more whenever someone would have something challenging. 
-This cllaborative construct made the proceses better for the group. 
+We used our github accounts and created a project together. Since I already had one i will just continue
+using it. Afterward, we split up to start working on the project. The second meeting
+served more as a check-in to see how everyone was working and to see where the project was. We didn’t impose any boundaries
+on tasks, which made us be able to help one another more whenever someone would have something challenging or get stuck on a task.
+This team construct made the process better for the group.
 
-And then the thirde meeting came, as we were nearing the finish line of the site, 
-which relived the entire gorup. By that point, we were just three weeks away form the deadlin that was imposed on us by the teacher. 
-Our left over tasks where bug testing and implimentation of various features, 
+And then the third meeting came, as we were nearing the finish line of the site,
+which relieved the entire group. By that point, we were just three weeks away from the deadline that was imposed on us by the teacher.
+Our leftover tasks where bug testing and implementation of various features,
 such as the orderCart. I focused on the admin side and ironing out most of the buggs there while also working on the
 database. And what data we needed.
 
-Debugging went well, and allmost everything worked as intended,  
-We conducted tests(manually) while also setting up som rudementary tests, during which I began
+Debugging went well, and almost everything worked as intended,  
+We conducted tests(manually) while also setting up some rudimentary tests, during which I began
 learn about pytest. This Python library was helpful for testing. We also tried
 to implement Docker, which became the most
 challenging part of the project. Despite the difficulties, we achieved a
 working build in Docker.
 
 next we have Docker Compose, which was impossible given
-our curent setup.(we had to rewrite everything almost) After a long night and some frtration, 
-we managed to create functional website using Docker Compose, complete with a database. 
-With that, we can officially say that we’ve finnished this project.
+our current setup.(we had to rewrite everything almost) After a long night and some frustration,
+We managed to create a functional website using Docker Compose, complete with a database.
+With that, we can officially say that we’ve finished this project.
 
-As for my part, I was supposed to create Python tests, but due to time constraints, 
+As for my part, I was supposed to create Python tests, but due to time constraints,
 I wasn’t able to finish them at all.
